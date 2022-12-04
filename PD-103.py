@@ -147,8 +147,8 @@ with implementation:
     sit_ups_counts = st.number_input('Masukkan Jumlah sit-ups')
     broad_jump_cm = st.number_input('Masukkan Jarak broad jump')
     
-    all = st.button("Submit")
-    if all :
+    proses = st.button("Submit")
+    if proses:
         submit()
     def submit():
         # input
