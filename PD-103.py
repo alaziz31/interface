@@ -146,12 +146,13 @@ with implementation:
     sit_and_bend_forward_cm = st.number_input('Masukkan Ukuran sit and bend')
     sit_ups_counts = st.number_input('Masukkan Jumlah sit-ups')
     broad_jump_cm = st.number_input('Masukkan Jarak broad jump')
-
+    
+    all = st.button("Submit")
+    if all :
+        submit()
     def submit():
         # input
-        inputs = np.array([[
-            age, height_cm, weight_kg, body_fat, diastolic, systolic, gripForce, sit_and_bend_forward_cm, sit_ups_counts, broad_jump_cm
-        ]])
+        inputs = np.array([[age, height_cm, weight_kg, body_fat, diastolic, systolic, gripForce, sit_and_bend_forward_cm, sit_ups_counts, broad_jump_cm]])
         # st.write(inputs)
         # baru = pd.DataFrame(inputs)
         # input = pd.get_dummies(baru)
@@ -161,12 +162,6 @@ with implementation:
         le = joblib.load("le.save")
         model1 = joblib.load("tree.joblib")
         y_pred3 = model1.predict(inputs)
-        # if le.inverse_transform(y_pred3)[0]==1:
-        #     hasilakhir='Jasmine'
-        # else :
-        #     hasilakhir='Gonen'
         st.write("Berdasarkan data yang Anda masukkan, orang tersebut mendapatkan grade : ", le.inverse_transform(y_pred3)[0])
 
-    all = st.button("Submit")
-    if all :
-        submit()
+
