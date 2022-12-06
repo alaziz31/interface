@@ -149,8 +149,8 @@ with implementation:
     
     proses = st.button("Submit")
     if proses :
-        submit()
-    def submit():
+        kirim()
+    def kirim():
         # input
         inputs = np.array([[age, height_cm, weight_kg, body_fat, diastolic, systolic, gripForce, sit_and_bend_forward_cm, sit_ups_counts, broad_jump_cm]])
         # st.write(inputs)
