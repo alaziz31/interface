@@ -148,7 +148,7 @@ with implementation:
     broad_jump_cm = st.number_input('Masukkan Jarak broad jump')
     
     proses = st.button("Submit")
-    if proses == "Submit":
+    if proses :
         submit()
     def submit():
         # input
