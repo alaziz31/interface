@@ -27,8 +27,22 @@ with description:
     st.write("Nama : Abdul Wachid Al Aziz")
     st.write("NIM : 200411100103")
     st.write("Kelas : Penambangan Data A")
-    st.write("Dataset yang dipakai adalah dataset body performance yang diambil dari website kaggle dengan link https://www.kaggle.com/datasets/kukuroo3/body-performance-data")
-    st.write("Aplikasi ini untuk menentukan grade dari performa tubuh. Source code aplikasi dapat diakses melalui github dengan link https://github.com/alaziz31/datamining")
+    st.write("Dataset berisi tentang catatan performa tubuh manusia, kekuatan fisik dan dan nilai demografi seperti usia")
+    st.write("Aplikasi ini digunakan untuk mencari mengklasifikasikan performa tubuh")
+    st.write("Fitur yang digunakan :")
+    st.write("1. age (Usia) : Numerik")
+    st.write("2. gender (Jenis kelamin) : Kategorikal")
+    st.write("3. height_cm (Tinggi Badan) : Numerik")
+    st.write("4. weight_kg (Berat badan) : Numerik")
+    st.write("5. body_fat (Lemak tubuh) : Numerik")
+    st.write("6. diastolic (Tekanan darah diastolic) : Numerik")
+    st.write("7. systolic (Tekanan darah systolic) : Numerik")
+    st.write("8. gripForce (Kekuatan cengkrama) : Numerik")
+    st.write("9. sit_and_binding_fowrard (Jarak sitting forward binding : Numerik")
+    st.write("10. sit_ups_count (Jumlah sit up) : Numerik")
+    st.write("11. broad")
+    st.write("Link dataset https://www.kaggle.com/datasets/kukuroo3/body-performance-data")
+    st.write("Link github https://github.com/alaziz31/interface")
 
 with importdata:
     st.subheader("Upload File .csv")
@@ -37,9 +51,7 @@ with importdata:
         dataset, preprocessing, modelling = st.tabs(["Dataset", "Preprocessing", "Modelling"])
         with dataset:
             df = pd.read_csv(uploaded_file)
-            df['gender'].replace(['F','M'],[0,1],inplace=True)
             st.dataframe(df)
-            st.write('keterangan : "gender" 1 = Male, 0 = Female')
 
         with preprocessing:
             st.subheader("Preprocessing")
@@ -50,6 +62,8 @@ with importdata:
 
             if prepros == "Min Max Scaler":
                 if prepoc:
+                    df['gender'].replace(['F','M'],[0,1],inplace=True)
+                    st.write('keterangan : "gender" 1 = Male, 0 = Female')
                     df[["age","gender", "height_cm", "weight_kg", "body_fat", "diastolic", "systolic", "gripForce", "sit_and_bend_forward_cm", "sit_ups_counts","broad_jump_cm"]].agg(['min','max'])
                     df.Class.value_counts()
                     X = df.drop(columns=["Class"],axis=1)
