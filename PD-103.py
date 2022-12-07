@@ -40,7 +40,7 @@ with description:
     st.write("8. gripForce (Kekuatan cengkrama) : Numerik")
     st.write("9. sit_and_binding_fowrard (Jarak sitting forward binding : Numerik")
     st.write("10. sit_ups_count (Jumlah sit up) : Numerik")
-    st.write("11. broad")
+    st.write("11. broad_jumps_cm (Nilai lompat jauh  : Numerik")
     st.write("Link dataset https://www.kaggle.com/datasets/kukuroo3/body-performance-data")
     st.write("Link github https://github.com/alaziz31/interface")
 
