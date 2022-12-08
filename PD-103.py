@@ -1,7 +1,4 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
-import streamlit.components.v1 as html
-import io 
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
