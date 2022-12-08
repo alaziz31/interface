@@ -17,7 +17,7 @@ import warnings
 import altair as alt
 from sklearn.utils.validation import joblib
 
-st.set_page_config(page_title="Body Performance", page_icon='icon.png')
+st.set_page_config(page_title="Body Performance", page_icon='icon.png', layout="wide", initial_sidebar_state="auto")
 
 st.title("UAS PENAMBANGAN DATA")
 
