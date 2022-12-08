@@ -149,17 +149,17 @@ with importdata:
     
 with implementation:
     st.subheader("Implementation")
-    age = st.number_input('Masukkan Usia')
-    gender = st.number_input('Masukkan gender ( 1=Male 0=Female )')
-    height_cm = st.number_input('Masukkan Tinggi badan')
-    weight_kg = st.number_input('Masukkan Berat badan')
-    body_fat = st.number_input('Masukkan Lemak tubuh')
+    age = st.number_input('Masukkan Usia (tahun)')
+    gender = st.number_input('Masukkan gender ( 1=Pria 0=Wanita )')
+    height_cm = st.number_input('Masukkan Tinggi badan (cm)')
+    weight_kg = st.number_input('Masukkan Berat badan (Kg)')
+    body_fat = st.number_input('Masukkan Lemak tubuh (Persen)')
     diastolic = st.number_input('Masukkan Tekanan diastolic')
     systolic = st.number_input('Masukkan Tekanan systolic')
-    gripForce = st.number_input('Masukkan Kekuatan cengkraman')
-    sit_and_bend_forward_cm = st.number_input('Masukkan Ukuran sit and bend')
+    gripForce = st.number_input('Masukkan Kekuatan cengkraman (Kg)')
+    sit_and_bend_forward_cm = st.number_input('Masukkan Ukuran sit and bend (cm)')
     sit_ups_counts = st.number_input('Masukkan Jumlah sit-ups')
-    broad_jump_cm = st.number_input('Masukkan Jarak broad jump')
+    broad_jump_cm = st.number_input('Masukkan Jarak broad jump (cm)')
 
     def submit():
         # input
