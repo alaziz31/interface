@@ -51,6 +51,8 @@ with importdata:
         dataset, preprocessing, modelling = st.tabs(["Dataset", "Preprocessing", "Modelling"])
         with dataset:
             df = pd.read_csv(uploaded_file)
+            df['gender'].replace(['F','M'],[0,1],inplace=True)
+            st.write('keterangan : "gender" 1 = Male, 0 = Female')
             st.dataframe(df)
 
         with preprocessing:
@@ -62,8 +64,6 @@ with importdata:
 
             if prepros == "Min Max Scaler":
                 if prepoc:
-                    df['gender'].replace(['F','M'],[0,1],inplace=True)
-                    st.write('keterangan : "gender" 1 = Male, 0 = Female')
                     df[["age","gender", "height_cm", "weight_kg", "body_fat", "diastolic", "systolic", "gripForce", "sit_and_bend_forward_cm", "sit_ups_counts","broad_jump_cm"]].agg(['min','max'])
                     df.Class.value_counts()
                     X = df.drop(columns=["Class"],axis=1)
